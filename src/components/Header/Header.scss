@@ -1,0 +1,25 @@
+@import './../../styles/settings.scss';
+
+.header {
+    display: flex;
+    padding: 0 60px;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+
+    & .header-title {
+        margin: 0;
+    }
+    // background-color: $color-primary;
+}
+
+.button, .button:focus {
+    font-size: 20px;
+    background-color: #fff;
+    width: 150px;
+    padding: 10px;
+    border-color: $color-highlight;
+    outline: none;
+    color: $primary-font-color;
+
+}

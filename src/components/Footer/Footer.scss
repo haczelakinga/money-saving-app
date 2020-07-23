@@ -1,0 +1,15 @@
+@import './../../styles/settings.scss' ;
+
+
+.footer {
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.5;
+    background-color: #6c8496;
+    color:#ffff;
+     
+    & p {
+        margin: 0;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,37 @@
+@import './../../styles/settings.scss' ;
+
+.flex-wrapper {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+    width: 100%;
+}
+
+.section--color-one {
+    background-color: $color-primary;
+}
+
+.section--color-two {
+    background-color: $color-secondary;
+}
+
+.section-title {
+    font-size: 38px;
+}
+
+.image-wrapper {
+    height: auto;
+    width: 40%;
+    padding: 0 60px;
+}
+
+.description-wrapper {
+    padding: 0 60px;
+    max-width: 550px;
+}
+
+.description {
+    font-size: 18px;
+}

@@ -1,0 +1,15 @@
+@import './settings.scss';
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: $primary-font-color;
+    font-family: 'Karla', sans-serif;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
