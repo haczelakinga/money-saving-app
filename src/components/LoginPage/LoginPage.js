@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const LoginPage = () => {
     return(
         <div className='login-page'>
@@ -10,3 +9,4 @@ const LoginPage = () => {
 }
 
 export default LoginPage;
+
