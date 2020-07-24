@@ -10,16 +10,14 @@
     & .header-title {
         margin: 0;
     }
-    // background-color: $color-primary;
 }
 
-.button, .button:focus {
+.login-button  {
+    text-align: center;
     font-size: 20px;
-    background-color: #fff;
     width: 150px;
     padding: 10px;
-    border-color: $color-highlight;
-    outline: none;
+    border: 2px solid $color-highlight;
+    text-decoration: none;
     color: $primary-font-color;
-
 }
