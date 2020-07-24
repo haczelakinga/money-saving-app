@@ -6,10 +6,10 @@ import {Link} from 'react-router-dom';
 const Header = () => {
     return (
         <header className='header'>
-            <h1 className='header-title'><img src={logo} alt='budget-manager'></img></h1>
-            {/* <button className='button'> */}
-                <Link className='login-button' to='/login'>Log In</Link>
-            {/* </button> */}
+            <Link to='/'>
+                <h1 className='header-title'><img src={logo} alt='budget-manager'></img></h1>
+            </Link>
+            <Link className='login-button' to='/login'>Log In</Link>
         </header>
     )
 }
