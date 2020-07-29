@@ -1,14 +1,14 @@
 import React from 'react';
 import './LoginPage.scss';
-import FaceboookLogin from "../FacebookLogin/FacebookLogin";
-import GithubLogin from "../GithubLogin/GithubLogin";
+import FacebookLogIn from "../FacebookLogin/FacebookLogin";
+import GoogleLogIn from "../GoogleLogin/GoogleLogin";
 
 
 const LoginPage = () => {
     return (
         <div className='login-page'>
-            <FaceboookLogin />
-            <GithubLogin />
+            <FacebookLogIn />
+            <GoogleLogIn />
         </div>
 
     )

@@ -1,5 +1,6 @@
 import React from 'react';
 import FacebookLogin from 'react-facebook-login';
+import './FacebookLogin.scss'
 
 const responseFacebook = (response) => {
     console.log(response);
@@ -12,6 +13,7 @@ const FaceboookLogin = () => {
     return (
         <FacebookLogin
             appId="2670655546369010"
+            cssClass='login'
             autoLoad={false}
             fields="name,email,picture"
             onClick={componentClicked}
