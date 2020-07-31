@@ -1,0 +1,22 @@
+@import '../../styles/settings.scss';
+
+.grid-wrapper {
+  display: grid;
+}
+
+.grid-one-of-three {
+  grid-column: 1 / 2;
+  grid-row: 1;
+  background-color: $color-secondary;
+}
+
+.grid-two-of-three {
+  grid-column: 2 / 6;
+  grid-row: 1;
+  background-color: $color-primary;
+}
+
+
+
+
+

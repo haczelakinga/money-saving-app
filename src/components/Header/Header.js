@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './../../assets/logo.png'
 import './Header.scss';
 import {Link} from 'react-router-dom';
+import LoginButton from "../LoginButton/LoginButton";
 
 const Header = () => {
     return (
@@ -9,7 +10,7 @@ const Header = () => {
             <Link to='/'>
                 <h1 className='header-title'><img src={logo} alt='budget-manager'></img></h1>
             </Link>
-            <Link className='login-button' to='/login'>Log In</Link>
+            <LoginButton />
         </header>
     )
 }
