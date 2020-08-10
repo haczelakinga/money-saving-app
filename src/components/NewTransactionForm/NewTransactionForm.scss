@@ -27,17 +27,13 @@
   margin-right: 30px;
 }
 
-.form-button {
-  margin: 0 25px 0 auto;
-  background-color: $color-highlight;
-  color: #ffffff;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-}
-
 .input-span {
   border: 1px solid $color-highlight;
   background-color: #ffffff;
   padding-left: 2px;
+}
+
+.hidden-label {
+  position: absolute;
+  visibility: hidden;
 }

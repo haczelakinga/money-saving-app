@@ -1,7 +1,7 @@
 import React from 'react';
 import './MoneyManager.scss'
 import UserProfile from "../UserProfile/UserProfile";
-import NewTransactionForm from "../NewTransactionForm/NewTransactionForm";
+import NewTransactionForm from "../NewTransactionForm/NewTransactionFormContainer";
 
 const MoneyManager = () => {
     return (
