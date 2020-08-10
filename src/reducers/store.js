@@ -1,12 +1,22 @@
-import newTransaction from './newTransactionRedux';
+import newTransactionRedux from './newTransactionRedux';
+// import transactionListRedux from './transactionListRedux';
 import {combineReducers, createStore} from "redux";
 
+
 export const allReducers = combineReducers({
-    transactions: newTransaction
+    transactions: newTransactionRedux,
+    // transactionsList: transactionListRedux
 });
 
 const initialState = {
-    transactions: []
+    transactions: [
+        {
+            name: 'DEFAULT',
+            amount: 30,
+            date: '2020-02-02',
+            category: 'fas fa-lightbulb-on'
+        }
+    ]
 }
 
 export let myStore = createStore(

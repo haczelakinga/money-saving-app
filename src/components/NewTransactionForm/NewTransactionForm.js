@@ -36,12 +36,20 @@ class NewTransactionForm extends React.Component {
     handleOnSubmit = (e, dispatch) => {
         e.preventDefault();
         console.log('clicked')
-        return this.props.setNewTransaction(this.state);
+        return (
+            this.props.setNewTransaction(this.state),
+            this.clearInputs()
+        )
+    }
+
+    clearInputs = () => {
+        const form = document.getElementById('transaction-form');
+        form.reset();
     }
 
     render() {
         return (
-            <form className='form-flexbox' onSubmit={this.handleOnSubmit}>
+            <form id='transaction-form' className='form-flexbox' onSubmit={this.handleOnSubmit}>
                 <label htmlFor='name' className='hidden-label'>Transaction Name</label>
                 <input id='name' className='form-input form-input--name' type='text' placeholder='Name of your transaction'
                        onChange={this.handleNameChange}/>

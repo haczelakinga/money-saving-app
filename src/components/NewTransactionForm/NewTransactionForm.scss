@@ -11,6 +11,7 @@
   padding: 2px;
   border: 1px solid $color-highlight;
   outline: none;
+  background-color:#ffffff;
 }
 
 .form-input--name {
@@ -25,6 +26,8 @@
 .form-select {
   border: 1px solid $color-highlight;
   margin-right: 30px;
+  font-family: 'Font Awesome 5 Free', 'Karla';
+  font-weight: 900;
 }
 
 .input-span {
@@ -36,4 +39,14 @@
 .hidden-label {
   position: absolute;
   visibility: hidden;
+}
+
+.form-button {
+  margin: 0 40px 0 auto;
+  border-radius: 0;
+  border: 2px solid $color-highlight;
+  background-color: $color-secondary;
+  padding: 2px 20px;
+  font-size: 18px;
+
 }

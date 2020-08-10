@@ -2,6 +2,7 @@ import React from 'react';
 import './MoneyManager.scss'
 import UserProfile from "../UserProfile/UserProfile";
 import NewTransactionForm from "../NewTransactionForm/NewTransactionFormContainer";
+import TransactionListContainer from "../TransactionList/TransactionListContainer";
 
 const MoneyManager = () => {
     return (
@@ -11,6 +12,7 @@ const MoneyManager = () => {
             </div>
             <div className='grid-two-of-three'>
                 <NewTransactionForm />
+                <TransactionListContainer />
             </div>
         </div>
     )

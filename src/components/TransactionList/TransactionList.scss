@@ -1,0 +1,49 @@
+@import '../../styles/settings.scss';
+
+.transactions-list-wrapper {
+  margin: 50px 30px;
+}
+
+.list-header {
+  background-color: $color-highlight;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 24% 24% 24% 24% 4%;
+  list-style: none;
+  text-align: center;
+  padding: 20px 50px;
+  margin: 0;
+  font-style: italic;
+}
+
+.transactions-list {
+  display: grid;
+  grid-template-columns: 24% 24% 24% 24% 4%;
+  list-style: none;
+  text-align: center;
+  padding: 20px 50px;
+  margin: 0;
+
+  &:nth-child(even) {
+    background: #ffffff;
+  }
+  &:nth-child(odd) {
+    background: $color-secondary;
+  }
+}
+
+.transactions-list--item {
+  margin: 0;
+  padding: 0;
+}
+
+.edit-icon {
+  display: none;
+  cursor: pointer;
+  color: $color-danger;
+}
+
+.transactions-list:hover > .edit-icon {
+  display: block;
+
+}
