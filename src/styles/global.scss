@@ -12,4 +12,15 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
+  background-color: white;
+}
+
+input:focus, input:active {
+  background-color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  transition: background-color 1s ease-in-out 0s;
 }

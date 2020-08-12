@@ -26,8 +26,6 @@
 .form-select {
   border: 1px solid $color-highlight;
   margin-right: 30px;
-  font-family: 'Font Awesome 5 Free', 'Karla';
-  font-weight: 900;
 }
 
 .input-span {
@@ -48,5 +46,9 @@
   background-color: $color-secondary;
   padding: 2px 20px;
   font-size: 18px;
-
+  outline: none;
+  & :focus {
+    outline: none;
+    outline-offset: 0;
+  }
 }

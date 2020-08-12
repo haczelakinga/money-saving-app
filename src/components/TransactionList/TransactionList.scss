@@ -8,7 +8,7 @@
   background-color: $color-highlight;
   color: #ffffff;
   display: grid;
-  grid-template-columns: 24% 24% 24% 24% 4%;
+  grid-template-columns: 23% 23% 23% 23% auto auto;
   list-style: none;
   text-align: center;
   padding: 20px 50px;
@@ -18,7 +18,7 @@
 
 .transactions-list {
   display: grid;
-  grid-template-columns: 24% 24% 24% 24% 4%;
+  grid-template-columns: 23% 23% 23% 23% auto auto;
   list-style: none;
   text-align: center;
   padding: 20px 50px;
@@ -37,7 +37,7 @@
   padding: 0;
 }
 
-.edit-icon {
+.edit-icon, .delete-icon {
   display: none;
   cursor: pointer;
   color: $color-danger;
@@ -45,5 +45,8 @@
 
 .transactions-list:hover > .edit-icon {
   display: block;
+}
 
+.transactions-list:hover > .delete-icon {
+  display: block;
 }
