@@ -2,7 +2,7 @@ import React from "react";
 import "./TransactionList.scss";
 import moment from "moment";
 
-const TransactionList = ({ transactions }) => {
+const TransactionList = ({ transactions, deleteTransaction }) => {
   if (transactions.length > 0) {
     let properDate = (date) => moment(date).format("YYYY-MM-DD");
 
@@ -22,8 +22,15 @@ const TransactionList = ({ transactions }) => {
             <li>
               <i className={transaction.categoryIcon}></i>
             </li>
-            <i className="fas fa-pen edit-icon"></i>
-            <i className="fas fa-trash-alt delete-icon"></i>
+            <button className="edit-button">
+              <i className="fas fa-pen"></i>
+            </button>
+            <button
+              className="delete-button"
+              onClick={() => deleteTransaction(transaction.uuid)}
+            >
+              <i className="fas fa-trash-alt"></i>
+            </button>
           </ul>
         ))}
       </div>

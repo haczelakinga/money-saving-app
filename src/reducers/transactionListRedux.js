@@ -1,7 +1,7 @@
-export const getAllTransactions = ({ transactions }) => {
-  return transactions.sort(function (a, b) {
-    let dateA = new Date(a.date),
-      dateB = new Date(b.date);
-    return dateA - dateB;
-  });
-};
+// action creators
+
+//reducers
+export default function reducer(state = [], action = {}) {
+  switch (action.type) {
+  }
+}

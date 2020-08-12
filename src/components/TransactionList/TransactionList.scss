@@ -37,16 +37,21 @@
   padding: 0;
 }
 
-.edit-icon, .delete-icon {
+.edit-button, .delete-button {
   display: none;
   cursor: pointer;
   color: $color-danger;
+  font-size: 15px;
+  z-index: 100;
+  background-color: transparent;
+  border: none
 }
 
-.transactions-list:hover > .edit-icon {
+.transactions-list:hover > .edit-button {
   display: block;
 }
 
-.transactions-list:hover > .delete-icon {
+.transactions-list:hover > .delete-button {
   display: block;
 }
+

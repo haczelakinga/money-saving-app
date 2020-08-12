@@ -1,6 +1,9 @@
 import { connect } from "react-redux";
 import TransactionList from "./TransactionList";
-import { getAllTransactions } from "../../reducers/transactionListRedux";
+import {
+  getAllTransactions,
+  deleteTransaction,
+} from "../../reducers/newTransactionRedux";
 
 const mapStateToProps = (state) => {
   return {
@@ -8,4 +11,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(TransactionList);
+export const mapDispatchToProps = (dispatch) => ({
+  deleteTransaction: (id) => dispatch(deleteTransaction(id)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(TransactionList);
