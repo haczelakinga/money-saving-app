@@ -2,6 +2,7 @@ import React from "react";
 import "./TransactionList.scss";
 import moment from "moment";
 import blankList from "./../../assets/undraw_blank_canvas_3rbb.svg";
+import DatePicker from "react-datepicker";
 
 const TransactionList = ({
   transactions,
@@ -23,6 +24,16 @@ const TransactionList = ({
     return editTransaction(info);
   };
 
+  const updateDate = (uuid, date) => {
+    const info = {
+      name: "date",
+      value: date,
+      uuid,
+    };
+    editTransaction(info);
+    updateSelectedDate(date);
+  };
+
   const enableInput = (uuid) => (e) => {
     const clickedInput = e.target;
     clickedInput.classList.remove("disableInput");
@@ -39,6 +50,12 @@ const TransactionList = ({
       }
     });
   };
+
+  let updatedDate = "";
+  const updateSelectedDate = (date) => {
+    updatedDate = date;
+  };
+  console.log("updateddate", updatedDate);
 
   if (transactions.length > 0) {
     let properDate = (date) => moment(date).format("YYYY-MM-DD");
@@ -57,7 +74,7 @@ const TransactionList = ({
             key={transaction.uuid}
             id={transaction.uuid}
           >
-            <li className="transactions-list--item">
+            <li>
               <input
                 name={"name"}
                 className="disableInput"
@@ -66,8 +83,29 @@ const TransactionList = ({
                 onClick={(e) => enableInput(transaction.uuid)(e)}
               />
             </li>
-            <li>$ {transaction.amount}</li>
-            <li>{properDate(transaction.date)}</li>
+            <li>
+              $
+              <input
+                name={"amount"}
+                className="disableInput cost-input"
+                type="number"
+                step="0.01"
+                min="0.01"
+                readOnly
+                defaultValue={`${transaction.amount}`}
+                onClick={(e) => enableInput(transaction.uuid)(e)}
+              />
+            </li>
+            <li>
+              <label>
+                {" "}
+                <DatePicker
+                  className="calendar disableInput"
+                  selected={updatedDate ? new Date(updatedDate) : new Date()}
+                  onSelect={(date) => updateDate(transaction.uuid, date)}
+                />
+              </label>
+            </li>
             <li>
               <i className={transaction.categoryIcon} />
             </li>

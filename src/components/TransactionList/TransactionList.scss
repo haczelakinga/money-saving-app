@@ -33,11 +33,6 @@
   }
 }
 
-.transactions-list--item {
-  margin: 0;
-  padding: 0;
-}
-
 .delete-button {
   display: none;
   cursor: pointer;
@@ -91,16 +86,34 @@
   padding: 8px 0;
   font-style: italic;
   cursor: text;
+  width: auto;
 
-  &::selection {background-color: transparent;}
-
-
+  &::selection {
+    background-color: transparent;
+  }
 
   &:focus {
     background-color: transparent;
     outline: none;
-
   }
 }
 
+.cost-input {
+  width: 60px;
+}
 
+.disableCal {
+  pointer-events: none;
+}
+
+.calendar {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  outline: none;
+
+  &:focus {
+    background-color: transparent;
+    border: none
+  }
+}

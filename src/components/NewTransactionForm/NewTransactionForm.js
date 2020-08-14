@@ -29,7 +29,6 @@ class NewTransactionForm extends React.Component {
     this.setState({
       date: date,
     });
-    console.log(date);
   };
 
   handleCategoryChange = (e) => {
