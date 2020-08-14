@@ -12,6 +12,7 @@ const createActionName = (name) => `app/${reducerName}/${name}`;
 // action types
 export const SET_NEW_TRANSACTION = createActionName("SET_NEW_TRANSACTION");
 export const DELETE_TRANSACTION = createActionName("DELETE_TRANSACTION");
+export const EDIT_TRANSACTION = createActionName("EDIT_TRANSACTION");
 
 // action creators
 export const setNewTransaction = (payload) => ({
@@ -21,6 +22,10 @@ export const setNewTransaction = (payload) => ({
 export const deleteTransaction = (payload) => ({
   payload,
   type: DELETE_TRANSACTION,
+});
+export const editTransaction = (payload) => ({
+  payload,
+  type: EDIT_TRANSACTION,
 });
 
 //reducers
@@ -41,6 +46,19 @@ export default function reducer(state = [], action = {}) {
         }
       }
       return newState;
+
+    case EDIT_TRANSACTION:
+      console.log(state);
+      for (let transaction of state) {
+        if (transaction.uuid === action.payload.uuid) {
+          for (let key in transaction) {
+            if (key === action.payload.name) {
+              transaction[key] = action.payload.value;
+            }
+          }
+        }
+      }
+      return state;
 
     default:
       return state;

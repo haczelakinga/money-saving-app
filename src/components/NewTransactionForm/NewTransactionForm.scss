@@ -47,8 +47,17 @@
   padding: 2px 20px;
   font-size: 18px;
   outline: none;
+  transition: all 1s;
   & :focus {
     outline: none;
     outline-offset: 0;
   }
+  &:hover {
+  background-color: darken($color-secondary, 5%);
+  }
+}
+
+
+.empty-input {
+  background-color: #ffa9a7;
 }

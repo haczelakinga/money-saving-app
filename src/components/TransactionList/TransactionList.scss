@@ -8,7 +8,7 @@
   background-color: $color-highlight;
   color: #ffffff;
   display: grid;
-  grid-template-columns: 23% 23% 23% 23% auto auto;
+  grid-template-columns: 24% 24% 24% 24% auto;
   list-style: none;
   text-align: center;
   padding: 20px 50px;
@@ -18,7 +18,7 @@
 
 .transactions-list {
   display: grid;
-  grid-template-columns: 23% 23% 23% 23% auto auto;
+  grid-template-columns: 24% 24% 24% 24% auto;
   list-style: none;
   text-align: center;
   padding: 20px 50px;
@@ -27,6 +27,7 @@
   &:nth-child(even) {
     background: #ffffff;
   }
+
   &:nth-child(odd) {
     background: $color-secondary;
   }
@@ -37,7 +38,7 @@
   padding: 0;
 }
 
-.edit-button, .delete-button {
+.delete-button {
   display: none;
   cursor: pointer;
   color: $color-danger;
@@ -47,11 +48,59 @@
   border: none
 }
 
-.transactions-list:hover > .edit-button {
-  display: block;
-}
-
 .transactions-list:hover > .delete-button {
   display: block;
 }
+
+.blank-list {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 21px;
+  color: $color-highlight
+}
+
+.blank-list-image {
+  width: 20%;
+}
+
+.disableInput {
+  background-color: transparent;
+  margin: 0;
+  padding: 8px 0;
+  outline: none;
+  text-align: center;
+  transition: all .3s;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: $color-primary;
+    border-radius: 1px;
+  }
+
+  &::selection {background-color: transparent;}
+
+  &:focus {
+    background-color: transparent;
+  }
+}
+
+.enableInput {
+  background-color: transparent;
+  border: 1px solid $color-highlight;
+  text-align: center;
+  padding: 8px 0;
+  font-style: italic;
+  cursor: text;
+
+  &::selection {background-color: transparent;}
+
+
+
+  &:focus {
+    background-color: transparent;
+    outline: none;
+
+  }
+}
+
 

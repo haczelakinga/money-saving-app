@@ -62,14 +62,19 @@ class NewTransactionForm extends React.Component {
     console.log(value);
   };
 
-  handleOnSubmit = (e, dispatch) => {
+  handleOnSubmit = (e) => {
     e.preventDefault();
     if (this.state.name) {
       if (this.state.amount) {
-        this.setState({
-          uuid: uuidv4(),
-        });
-        return this.props.setNewTransaction(this.state) && this.clearInputs();
+        if (this.state.category) {
+          this.setState({
+            uuid: uuidv4(),
+          });
+          console.log(this);
+          return this.props.setNewTransaction(this.state) && this.clearInputs();
+        } else {
+          alert("Please choose category of your transaction");
+        }
       } else {
         alert("Please type cost of your transaction");
       }
@@ -82,6 +87,7 @@ class NewTransactionForm extends React.Component {
     this.setState({
       name: "",
       amount: "",
+      category: "",
     });
     const form = document.getElementById("transaction-form");
     form.reset();
