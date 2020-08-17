@@ -62,27 +62,30 @@ class NewTransactionForm extends React.Component {
   };
 
   handleOnSubmit = (e) => {
+    const nameInput = document.getElementById("name");
+    const costInput = document.getElementById("cost");
+    const categoryInput = document.getElementById("category");
+    const allInputs = [nameInput, costInput, categoryInput];
+
     e.preventDefault();
-    if (this.state.name) {
-      if (this.state.amount) {
-        if (this.state.category) {
-          this.setState({
-            uuid: uuidv4(),
-          });
-          console.log(this);
-          return this.props.setNewTransaction(this.state) && this.clearInputs();
-        } else {
-          alert("Please choose category of your transaction");
-        }
-      } else {
-        alert("Please type cost of your transaction");
-      }
+    if (this.state.name && this.state.amount) {
+      this.setState({
+        uuid: uuidv4(),
+      });
+      return (
+        this.props.setNewTransaction(this.state) && this.clearInputs(allInputs)
+      );
     } else {
-      alert("Please type name of your transaction");
+      for (let input of allInputs) {
+        if (!input.value) {
+          console.log();
+          input.classList.add("empty-input");
+        }
+      }
     }
   };
 
-  clearInputs = () => {
+  clearInputs = (allInputs) => {
     this.setState({
       name: "",
       amount: "",
@@ -90,6 +93,9 @@ class NewTransactionForm extends React.Component {
     });
     const form = document.getElementById("transaction-form");
     form.reset();
+    for (let i of allInputs) {
+      i.classList.remove("empty-input");
+    }
   };
 
   render() {
@@ -109,24 +115,22 @@ class NewTransactionForm extends React.Component {
           placeholder="Name of your transaction"
           onChange={this.handleNameChange}
         />
-        <span className="input-span">
-          $
-          <label htmlFor="cost" className="hidden-label">
-            Transaction Cost
-          </label>
-          <input
-            id="cost"
-            className="form-input form-input--number"
-            type="number"
-            step="0.01"
-            min="0.01"
-            onChange={this.handleAmountChange}
-          />
-        </span>
+        <label htmlFor="cost" className="hidden-label">
+          Transaction Cost
+        </label>
+        <input
+          id="cost"
+          className="form-input form-input--number"
+          type="number"
+          step="0.01"
+          min="0.01"
+          onChange={this.handleAmountChange}
+        />
         <label htmlFor="date" className="hidden-label">
           Transaction Date
         </label>
         <DatePicker
+          id="date"
           className="form-input"
           selected={this.state.date}
           onSelect={(date) => this.handleDateChange(date)}
@@ -139,11 +143,9 @@ class NewTransactionForm extends React.Component {
           className="form-select"
           name="Category"
           onChange={this.handleCategoryChange}
-          defaultValue="DEFAULT"
+          defaultValue="Category"
         >
-          <option value="DEFAULT" disabled>
-            Category
-          </option>
+          <option value="">Category</option>
           <option value="Bills">Bills</option>
           <option value="Food">Food</option>
           <option value="Car">Car</option>

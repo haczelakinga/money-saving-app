@@ -18,20 +18,9 @@
   width: 40%;
 }
 
-.form-input--number {
-  border: none;
-  width: 45px;
-}
-
 .form-select {
   border: 1px solid $color-highlight;
   margin-right: 30px;
-}
-
-.input-span {
-  border: 1px solid $color-highlight;
-  background-color: #ffffff;
-  padding-left: 2px;
 }
 
 .hidden-label {
@@ -58,5 +47,5 @@
 }
 
 .empty-input {
-  background-color: #ffa9a7;
+  border: 1px solid $color-danger;
 }

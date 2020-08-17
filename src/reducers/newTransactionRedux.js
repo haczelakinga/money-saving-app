@@ -39,26 +39,20 @@ export default function reducer(state = [], action = {}) {
         },
       ];
     case DELETE_TRANSACTION:
-      let newState = [];
-      for (let transaction of state) {
-        if (transaction.uuid !== action.payload) {
-          newState.push(transaction);
-        }
-      }
-      return newState;
+      return state.filter((transaction) => transaction.uuid !== action.payload);
 
     case EDIT_TRANSACTION:
-      console.log(state);
-      for (let transaction of state) {
-        if (transaction.uuid === action.payload.uuid) {
-          for (let key in transaction) {
-            if (key === action.payload.name) {
-              transaction[key] = action.payload.value;
-            }
-          }
+      const key = action.payload.name;
+
+      return state.map((transaction) => {
+        if (transaction.uuid !== action.payload.uuid) {
+          return transaction;
         }
-      }
-      return state;
+        return {
+          ...transaction,
+          [key]: action.payload.value,
+        };
+      });
 
     default:
       return state;
