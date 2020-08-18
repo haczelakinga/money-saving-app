@@ -116,14 +116,16 @@ class TransactionList extends React.Component {
       );
     } else {
       return (
-        <div className="blank-list">
-          <p>No transaction available!</p>
-          <p>You can add one above.</p>
-          <img
-            className="blank-list-image"
-            src={blankList}
-            alt={"blank list"}
-          />
+        <div className="transactions-list-wrapper">
+          <div className="blank-list">
+            <p>No transaction available!</p>
+            <p>You can add one above.</p>
+            <img
+              className="blank-list-image"
+              src={blankList}
+              alt={"blank list"}
+            />
+          </div>
         </div>
       );
     }

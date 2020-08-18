@@ -2,25 +2,27 @@
 
 .form-flexbox {
   display: flex;
+  justify-content: space-evenly;
   padding: 20px;
 }
 
 .form-input {
-  margin: 0 30px;
   height: 35px;
-  padding: 2px;
-  border: 1px solid $color-highlight;
+  border: none;
+  border-bottom: 1px solid $color-highlight;
   outline: none;
-  background-color:#ffffff;
-}
+  background-color:$color-primary;
+  text-align: center;
 
-.form-input--name {
-  width: 40%;
+  &:focus {
+    background-color: transparent;
+  }
 }
-
-.form-select {
-  border: 1px solid $color-highlight;
-  margin-right: 30px;
+.select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 2px 15px;
 }
 
 .hidden-label {
@@ -29,23 +31,23 @@
 }
 
 .form-button {
-  margin: 0 40px 0 auto;
   border-radius: 0;
   border: 2px solid $color-highlight;
-  background-color: $color-secondary;
+  background-color: $color-primary;
   padding: 2px 20px;
   font-size: 18px;
   outline: none;
   transition: all 1s;
+  color: $primary-font-color;
   & :focus {
     outline: none;
     outline-offset: 0;
   }
   &:hover {
-  background-color: darken($color-secondary, 5%);
+  background-color: darken($color-primary, 5%);
   }
 }
 
 .empty-input {
-  border: 1px solid $color-danger;
+  border-bottom: 1px solid #f84d4d;
 }

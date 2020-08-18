@@ -68,7 +68,7 @@ class NewTransactionForm extends React.Component {
     const allInputs = [nameInput, costInput, categoryInput];
 
     e.preventDefault();
-    if (this.state.name && this.state.amount) {
+    if (this.state.name && this.state.amount && this.state.category) {
       this.setState({
         uuid: uuidv4(),
       });
@@ -78,7 +78,6 @@ class NewTransactionForm extends React.Component {
     } else {
       for (let input of allInputs) {
         if (!input.value) {
-          console.log();
           input.classList.add("empty-input");
         }
       }
@@ -110,7 +109,7 @@ class NewTransactionForm extends React.Component {
         </label>
         <input
           id="name"
-          className="form-input form-input--name"
+          className="form-input"
           type="text"
           placeholder="Name of your transaction"
           onChange={this.handleNameChange}
@@ -120,27 +119,29 @@ class NewTransactionForm extends React.Component {
         </label>
         <input
           id="cost"
-          className="form-input form-input--number"
+          className="form-input"
           type="number"
           step="0.01"
           min="0.01"
           onChange={this.handleAmountChange}
+          placeholder="$"
         />
         <label htmlFor="date" className="hidden-label">
           Transaction Date
         </label>
         <DatePicker
           id="date"
-          className="form-input"
+          className="form-input input-date"
           selected={this.state.date}
           onSelect={(date) => this.handleDateChange(date)}
+          popperPlacement="bottom"
         />
         <label htmlFor="category" className="hidden-label">
           Transaction Category
         </label>
         <select
           id="category"
-          className="form-select"
+          className="select form-input"
           name="Category"
           onChange={this.handleCategoryChange}
           defaultValue="Category"
