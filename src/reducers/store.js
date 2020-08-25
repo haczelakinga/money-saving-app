@@ -1,10 +1,11 @@
-import newTransactionRedux from "./newTransactionRedux";
-// import transactionListRedux from './transactionListRedux';
+import transactionRedux from "./transactionsRedux";
+import userRedux from "./userRedux";
+
 import { combineReducers, createStore } from "redux";
 
 export const allReducers = combineReducers({
-  transactions: newTransactionRedux,
-  // transactionsList: transactionListRedux
+  transactions: transactionRedux,
+  user: userRedux,
 });
 
 const initialState = {
@@ -34,6 +35,7 @@ const initialState = {
       categoryIcon: "fas fa-car",
     },
   ],
+  user: {},
 };
 
 export let myStore = createStore(

@@ -1,6 +1,6 @@
 import React from "react";
 import "./MoneyManager.scss";
-import UserProfile from "../UserProfile/UserProfile";
+import UserProfile from "../UserProfile/UserProfileContainer";
 import NewTransactionForm from "../NewTransactionForm/NewTransactionFormContainer";
 import TransactionListContainer from "../TransactionList/TransactionListContainer";
 

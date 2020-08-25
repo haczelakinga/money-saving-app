@@ -1,17 +1,13 @@
-import React from 'react';
-import './LoginPage.scss';
-import FacebookLogIn from "../FacebookLogin/FacebookLogin";
-import GoogleLogIn from "../GoogleLogin/GoogleLogin";
-
+import React from "react";
+import "./LoginPage.scss";
+import Login from "../Login/LoginContainer";
 
 const LoginPage = () => {
-    return (
-        <div className='login-page'>
-            <FacebookLogIn />
-            <GoogleLogIn />
-        </div>
+  return (
+    <div className="login-page">
+      <Login />
+    </div>
+  );
+};
 
-    )
-}
-
-export default  LoginPage;
+export default LoginPage;

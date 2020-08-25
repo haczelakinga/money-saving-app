@@ -4,7 +4,7 @@ import {
   getAllTransactions,
   deleteTransaction,
   editTransaction,
-} from "../../reducers/newTransactionRedux";
+} from "../../reducers/transactionsRedux";
 
 const mapStateToProps = (state) => {
   return {

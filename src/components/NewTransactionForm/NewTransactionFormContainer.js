@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { setNewTransaction } from "../../reducers/newTransactionRedux";
+import { setNewTransaction } from "../../reducers/transactionsRedux";
 import NewTransactionForm from "./NewTransactionForm";
 
 export const mapDispatchToProps = (dispatch) => ({
