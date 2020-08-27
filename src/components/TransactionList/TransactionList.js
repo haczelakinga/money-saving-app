@@ -51,7 +51,6 @@ class TransactionList extends React.Component {
   };
 
   render() {
-    console.log("render");
     const { transactions } = this.props;
     if (transactions.length > 0) {
       return (

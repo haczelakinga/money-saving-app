@@ -7,15 +7,16 @@ import MainLayout from "./components/MainLayout/MainLayout";
 import LoginPage from "./components/LoginPage/LoginPage";
 import NotFound from "./components/NotFound/NotFound";
 import MoneyManager from "./components/MoneyManager/MoneyManager";
+import PrivateRoute from "./components/PrivateRoute/PrivateRouteContainer";
 
 function App() {
   return (
     <BrowserRouter>
       <MainLayout>
         <Switch>
-          <Route exact path="/" component={LandingPage}></Route>
-          <Route exact path="/login" component={LoginPage}></Route>
-          <Route exact path="/moneymanager" component={MoneyManager}></Route>
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/login" component={LoginPage} />
+          <PrivateRoute path="/moneymanager" component={MoneyManager} />
           <Route path="*" component={NotFound} />
         </Switch>
       </MainLayout>

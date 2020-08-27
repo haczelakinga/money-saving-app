@@ -1,4 +1,5 @@
 export const getUserDetails = ({ user }) => user;
+export const getLoginStatus = ({ user }) => user.loginStatus;
 
 // action name creator
 const reducerName = "user";

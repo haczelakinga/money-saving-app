@@ -8,13 +8,14 @@ class Login extends React.Component {
   state = {
     loginStatus: false,
   };
-
   componentClicked = (response) => {
     let details = {
       name: response.name,
       photo: response.picture,
       userID: response.id,
+      loginStatus: true,
     };
+
     this.props.setUserDetails(details);
     this.setState({
       loginStatus: true,
