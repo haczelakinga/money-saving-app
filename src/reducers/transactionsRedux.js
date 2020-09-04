@@ -1,4 +1,4 @@
-export const getAllTransactions = ({ transactions }) => {
+export const getAllTransactions = (transactions) => {
   return transactions.sort(function (a, b) {
     let dateA = new Date(a.date),
       dateB = new Date(b.date);
@@ -30,21 +30,28 @@ export const editTransaction = (payload) => ({
 
 //reducers
 export default function reducer(state = [], action = {}) {
+  let newState;
   switch (action.type) {
     case SET_NEW_TRANSACTION:
-      return [
+      newState = [
         ...state,
         {
           ...action.payload,
         },
       ];
+      localStorage.setItem("transactions", JSON.stringify(newState));
+      return newState;
     case DELETE_TRANSACTION:
-      return state.filter((transaction) => transaction.uuid !== action.payload);
+      newState = state.filter(
+        (transaction) => transaction.uuid !== action.payload
+      );
+      localStorage.setItem("transactions", JSON.stringify(newState));
+      return newState;
 
     case EDIT_TRANSACTION:
       const key = action.payload.name;
 
-      return state.map((transaction) => {
+      newState = state.map((transaction) => {
         if (transaction.uuid !== action.payload.uuid) {
           return transaction;
         }
@@ -53,6 +60,9 @@ export default function reducer(state = [], action = {}) {
           [key]: action.payload.value,
         };
       });
+      localStorage.setItem("transactions", JSON.stringify(newState));
+
+      return newState;
 
     default:
       return state;

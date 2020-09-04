@@ -7,8 +7,10 @@ import {
 } from "../../reducers/transactionsRedux";
 
 const mapStateToProps = (state) => {
+  let transactions = JSON.parse(localStorage.getItem("transactions"));
+  console.log("transakcje", transactions);
   return {
-    transactions: getAllTransactions(state),
+    transactions: getAllTransactions(transactions),
   };
 };
 
