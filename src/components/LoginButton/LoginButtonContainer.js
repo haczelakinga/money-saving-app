@@ -1,4 +1,4 @@
-import { getUserStatus } from "../../reducers/userRedux";
+import { getUserStatus, logOutUser } from "../../reducers/userRedux";
 import { connect } from "react-redux";
 import LoginButton from "./LoginButton";
 
@@ -10,4 +10,8 @@ const mapStateToProps = () => {
   };
 };
 
-export default connect(mapStateToProps, null)(LoginButton);
+export const mapDispatchToProps = (dispatch) => ({
+  logOutUser: (user) => dispatch(logOutUser(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginButton);

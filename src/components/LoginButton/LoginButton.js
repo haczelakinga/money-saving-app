@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./LoginButton.scss";
 
-const LoginButton = ({ userStatus }) => {
+const LoginButton = ({ userStatus, logOutUser }) => {
   let buttonText = "";
   if (userStatus) {
     buttonText = "Log Out";
@@ -10,8 +10,14 @@ const LoginButton = ({ userStatus }) => {
     buttonText = "Log In";
   }
 
+  const handleLogout = () => {
+    if (userStatus) {
+      logOutUser();
+    }
+  };
+
   return (
-    <Link className="login-button" to="/login">
+    <Link className="login-button" to="/login" onClick={handleLogout}>
       {buttonText}
     </Link>
   );
