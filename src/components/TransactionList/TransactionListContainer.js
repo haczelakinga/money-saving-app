@@ -8,9 +8,8 @@ import {
 
 const mapStateToProps = (state) => {
   let transactions = JSON.parse(localStorage.getItem("transactions"));
-  console.log("transakcje", transactions);
   return {
-    transactions: getAllTransactions(transactions),
+    transactions: transactions ? getAllTransactions(transactions) : [],
   };
 };
 

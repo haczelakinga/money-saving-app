@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./../../assets/logo.png";
 import "./Header.scss";
 import { Link } from "react-router-dom";
-import LoginButton from "../LoginButton/LoginButton";
+import LoginButton from "../LoginButton/LoginButtonContainer";
 
 const Header = () => {
   return (

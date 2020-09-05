@@ -15,7 +15,6 @@ class Login extends React.Component {
       userID: response.id,
       loginStatus: true,
     };
-
     this.props.setUserDetails(details);
     this.setState({
       loginStatus: true,

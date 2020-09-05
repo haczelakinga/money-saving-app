@@ -1,6 +1,6 @@
 import { getUserStatus } from "../../reducers/userRedux";
 import { connect } from "react-redux";
-import PrivateRoute from "./PrivateRoute";
+import LoginButton from "./LoginButton";
 
 const mapStateToProps = () => {
   let user = JSON.parse(localStorage.getItem("user"));
@@ -10,4 +10,4 @@ const mapStateToProps = () => {
   };
 };
 
-export default connect(mapStateToProps, null)(PrivateRoute);
+export default connect(mapStateToProps, null)(LoginButton);

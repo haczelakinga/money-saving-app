@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./LoginButton.scss";
 
-const LoginButton = () => {
-  const currentPath = window.location.pathname;
+const LoginButton = ({ userStatus }) => {
   let buttonText = "";
-  if (currentPath === "/moneymanager") {
+  if (userStatus) {
     buttonText = "Log Out";
   } else {
     buttonText = "Log In";

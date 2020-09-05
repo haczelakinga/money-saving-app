@@ -1,5 +1,5 @@
-export const getUserDetails = ({ user }) => user;
-export const getLoginStatus = ({ user }) => user.loginStatus;
+export const getUserDetails = (user) => user;
+export const getUserStatus = (user) => user.loginStatus;
 
 // action name creator
 const reducerName = "user";
@@ -18,6 +18,7 @@ export const setUserDetails = (payload) => ({
 export default function reducer(state = {}, action = {}) {
   switch (action.type) {
     case SET_USER:
+      localStorage.setItem("user", JSON.stringify(action.payload));
       return { ...action.payload };
 
     default: {
