@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import LoginButton from "./LoginButton";
 
 const mapStateToProps = () => {
-  let user = JSON.parse(localStorage.getItem("user"));
+  let state = JSON.parse(localStorage.getItem("state"));
 
   return {
-    userStatus: user ? getUserStatus(user) : false,
+    userStatus: state.user ? getUserStatus(state.user) : false,
   };
 };
 

@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import UserProfile from "./UserProfile";
 
 const mapStateToProps = () => {
-  let user = JSON.parse(localStorage.getItem("user"));
+  let state = JSON.parse(localStorage.getItem("state"));
 
   return {
-    user: user ? getUserDetails(user) : "",
+    user: state.user ? getUserDetails(state.user) : "",
   };
 };
 

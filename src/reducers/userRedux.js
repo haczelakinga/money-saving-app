@@ -1,5 +1,6 @@
 export const getUserDetails = (user) => user;
 export const getUserStatus = (user) => user.loginStatus;
+export const getUserID = (user) => user.userID;
 
 // action name creator
 const reducerName = "user";
@@ -24,11 +25,9 @@ export const logOutUser = (payload) => ({
 export default function reducer(state = {}, action = {}) {
   switch (action.type) {
     case SET_USER:
-      localStorage.setItem("user", JSON.stringify(action.payload));
       return { ...action.payload };
 
     case LOG_OUT_USER:
-      localStorage.removeItem("user");
       return { ...action.payload };
 
     default: {

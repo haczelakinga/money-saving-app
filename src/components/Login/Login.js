@@ -8,6 +8,7 @@ class Login extends React.Component {
   state = {
     loginStatus: false,
   };
+
   facebookHandler = (response) => {
     let details = {
       name: response.name,
@@ -22,7 +23,6 @@ class Login extends React.Component {
   };
 
   googleHandler = (response) => {
-    console.log(response);
     let details = {
       name: response.profileObj.name,
       photo: response.profileObj.imageUrl,

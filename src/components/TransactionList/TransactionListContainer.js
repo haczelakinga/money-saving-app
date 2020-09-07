@@ -5,11 +5,15 @@ import {
   deleteTransaction,
   editTransaction,
 } from "../../reducers/transactionsRedux";
+import { getUserID } from "../../reducers/userRedux";
 
-const mapStateToProps = (state) => {
-  let transactions = JSON.parse(localStorage.getItem("transactions"));
+const mapStateToProps = () => {
+  let state = JSON.parse(localStorage.getItem("state"));
+  let userID = state.user ? getUserID(state.user) : "";
   return {
-    transactions: transactions ? getAllTransactions(transactions) : [],
+    transactions: state.transactions
+      ? getAllTransactions(state.transactions, userID)
+      : [],
   };
 };
 

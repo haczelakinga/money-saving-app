@@ -1,10 +1,22 @@
-export const getAllTransactions = (transactions) => {
-  return transactions.sort(function (a, b) {
+export const getAllTransactions = (transactions, userID) => {
+  let filtered = transactions.filter(
+    (transaction) => transaction.userID === userID
+  );
+
+  return filtered.sort(function (a, b) {
     let dateA = new Date(a.date),
       dateB = new Date(b.date);
     return dateA - dateB;
   });
 };
+
+// export const getAllTransactions = (transactions) => {
+//   return transactions.sort(function (a, b) {
+//     let dateA = new Date(a.date),
+//       dateB = new Date(b.date);
+//     return dateA - dateB;
+//   });
+// };
 // action name creator
 const reducerName = "newTransaction";
 const createActionName = (name) => `app/${reducerName}/${name}`;
@@ -39,13 +51,11 @@ export default function reducer(state = [], action = {}) {
           ...action.payload,
         },
       ];
-      localStorage.setItem("transactions", JSON.stringify(newState));
       return newState;
     case DELETE_TRANSACTION:
       newState = state.filter(
         (transaction) => transaction.uuid !== action.payload
       );
-      localStorage.setItem("transactions", JSON.stringify(newState));
       return newState;
 
     case EDIT_TRANSACTION:
@@ -60,8 +70,6 @@ export default function reducer(state = [], action = {}) {
           [key]: action.payload.value,
         };
       });
-      localStorage.setItem("transactions", JSON.stringify(newState));
-
       return newState;
 
     default:

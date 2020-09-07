@@ -12,6 +12,7 @@ class NewTransactionForm extends React.Component {
     date: new Date(),
     category: "",
     categoryIcon: "",
+    userID: this.props.userID,
   };
 
   handleNameChange = (e) => {
