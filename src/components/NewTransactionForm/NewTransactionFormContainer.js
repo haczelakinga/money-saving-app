@@ -5,7 +5,6 @@ import { getUserID } from "../../reducers/userRedux";
 
 const mapStateToProps = () => {
   let state = JSON.parse(localStorage.getItem("state"));
-  console.log(state);
   return {
     userID: state.user ? getUserID(state.user) : "",
   };
