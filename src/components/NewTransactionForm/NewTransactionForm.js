@@ -12,6 +12,8 @@ class NewTransactionForm extends React.Component {
     date: new Date(),
     category: "",
     categoryIcon: "",
+    transactionType: "",
+    transactionTypeIcon: "",
     userID: this.props.userID,
   };
 
@@ -26,11 +28,11 @@ class NewTransactionForm extends React.Component {
       amount: e.target.value,
     });
   };
-  handleDateChange = (date) => {
-    this.setState({
-      date: date,
-    });
-  };
+  // handleDateChange = (date) => {
+  //   this.setState({
+  //     date: date,
+  //   });
+  // };
 
   handleCategoryChange = (e) => {
     let { value } = e.target;
@@ -59,7 +61,25 @@ class NewTransactionForm extends React.Component {
       category: value,
       categoryIcon: categoryIcon,
     });
+  };
+
+  handleTransactionType = (e) => {
+    let { value } = e.target;
+    let transactionType = value;
+    let transactionTypeIcon = "";
     console.log(value);
+    switch (value) {
+      case "Outcome":
+        transactionTypeIcon = "fas fa-chevron-down arrow-down";
+        break;
+      case "Income":
+        transactionTypeIcon = "fas fa-chevron-up arrow-up";
+        break;
+    }
+    this.setState({
+      transactionType: transactionType,
+      transactionTypeIcon: transactionTypeIcon,
+    });
   };
 
   handleOnSubmit = (e) => {
@@ -130,13 +150,13 @@ class NewTransactionForm extends React.Component {
         <label htmlFor="date" className="hidden-label">
           Transaction Date
         </label>
-        <DatePicker
-          id="date"
-          className="form-input input-date"
-          selected={this.state.date}
-          onSelect={(date) => this.handleDateChange(date)}
-          popperPlacement="bottom"
-        />
+        {/*<DatePicker*/}
+        {/*  id="date"*/}
+        {/*  className="form-input"*/}
+        {/*  selected={this.state.date}*/}
+        {/*  onSelect={(date) => this.handleDateChange(date)}*/}
+        {/*  popperPlacement="bottom"*/}
+        {/*/>*/}
         <label htmlFor="category" className="hidden-label">
           Transaction Category
         </label>
@@ -155,8 +175,22 @@ class NewTransactionForm extends React.Component {
           <option value="Clothes">Clothes</option>
           <option value="Hobby">Hobby</option>
         </select>
+        <label htmlFor="category" className="hidden-label">
+          Transaction Category
+        </label>
+        <select
+          id="category"
+          className="select form-input"
+          name="Way"
+          onChange={this.handleTransactionType}
+          defaultValue="Type"
+        >
+          <option value="">Type</option>
+          <option value="Outcome">Outcome</option>
+          <option value="Income">Income</option>
+        </select>
         <button className="form-button" type="submit">
-          Add transaction
+          Add
         </button>
       </form>
     );
