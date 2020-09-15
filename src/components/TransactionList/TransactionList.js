@@ -62,71 +62,59 @@ class TransactionList extends React.Component {
             <li>Date</li>
             <li>Category</li>
           </ul>
-          {transactions.map(
-            (transaction) => (
-              console.log(transaction.transactionTypeIcon),
-              (
-                <ul className={`transactions-list`} key={transaction.uuid}>
-                  <li>
-                    <i className={transaction.transactionTypeIcon} />
-                  </li>
-                  <li>
-                    <input
-                      placeholder=""
-                      name={"name"}
-                      className="disableInput"
-                      readOnly
-                      defaultValue={transaction.name}
-                      onClick={(e) =>
-                        this.enableInput(transaction.uuid, transaction.name)(e)
-                      }
-                    />
-                  </li>
-                  <li>
-                    $
-                    <input
-                      name={"amount"}
-                      className="disableInput cost-input"
-                      type="number"
-                      step="0.01"
-                      min="0.01"
-                      readOnly
-                      defaultValue={transaction.amount}
-                      onClick={(e) =>
-                        this.enableInput(
-                          transaction.uuid,
-                          transaction.amount
-                        )(e)
-                      }
-                    />
-                  </li>
-                  <li>
-                    <label>
-                      {" "}
-                      <DatePicker
-                        className="calendar disableInput"
-                        selected={new Date(transaction.date)}
-                        onSelect={(date) =>
-                          this.updateDate(transaction.uuid, date)
-                        }
-                      />
-                    </label>
-                  </li>
-                  <li className="category-icon">
-                    <i className={transaction.categoryIcon} />
-                  </li>
-                  <button
-                    className="delete-button"
-                    onClick={() =>
-                      this.props.deleteTransaction(transaction.uuid)
-                    }
-                  >
-                    <i className="fas fa-trash-alt" />
-                  </button>
-                </ul>
-              )
-            )
-          )}
+          {transactions.map((transaction) => (
+            <ul className={`transactions-list`} key={transaction.uuid}>
+              <li>
+                <i className={transaction.transactionTypeIcon} />
+              </li>
+              <li>
+                <input
+                  placeholder=""
+                  name={"name"}
+                  className="disableInput"
+                  readOnly
+                  defaultValue={transaction.name}
+                  onClick={(e) =>
+                    this.enableInput(transaction.uuid, transaction.name)(e)
+                  }
+                />
+              </li>
+              <li>
+                $
+                <input
+                  name={"amount"}
+                  className="disableInput cost-input"
+                  type="number"
+                  step="0.1"
+                  min="0.1"
+                  readOnly
+                  defaultValue={transaction.amount}
+                  onClick={(e) =>
+                    this.enableInput(transaction.uuid, transaction.amount)(e)
+                  }
+                />
+              </li>
+              <li>
+                <label>
+                  {" "}
+                  <DatePicker
+                    className="calendar disableInput"
+                    selected={new Date(transaction.date)}
+                    onSelect={(date) => this.updateDate(transaction.uuid, date)}
+                  />
+                </label>
+              </li>
+              <li className="category-icon">
+                <i className={transaction.categoryIcon} />
+              </li>
+              <button
+                className="delete-button"
+                onClick={() => this.props.deleteTransaction(transaction.uuid)}
+              >
+                <i className="fas fa-trash-alt" />
+              </button>
+            </ul>
+          ))}
         </div>
       );
     } else {

@@ -10,13 +10,33 @@ export const getAllTransactions = (transactions, userID) => {
   });
 };
 
-// export const getAllTransactions = (transactions) => {
-//   return transactions.sort(function (a, b) {
-//     let dateA = new Date(a.date),
-//       dateB = new Date(b.date);
-//     return dateA - dateB;
-//   });
-// };
+export const getAllIncomes = (transactions, userId) => {
+  let allIncomes = null;
+  let usersIncomeTransactions = getAllTransactions(transactions, userId).filter(
+    (transaction) => transaction.transactionType === "Income"
+  );
+
+  for (let transaction of usersIncomeTransactions) {
+    allIncomes += parseFloat(transaction.amount);
+  }
+
+  return allIncomes;
+};
+
+export const getAllOutcomes = (transactions, userId) => {
+  let allOutcomes = null;
+  let usersOutcomeTransactions = getAllTransactions(
+    transactions,
+    userId
+  ).filter((transaction) => transaction.transactionType === "Outcome");
+
+  for (let transaction of usersOutcomeTransactions) {
+    allOutcomes += parseFloat(transaction.amount);
+  }
+
+  return allOutcomes;
+};
+
 // action name creator
 const reducerName = "newTransaction";
 const createActionName = (name) => `app/${reducerName}/${name}`;

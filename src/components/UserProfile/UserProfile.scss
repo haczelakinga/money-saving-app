@@ -33,3 +33,16 @@
   height: 2px;
   background-image: linear-gradient(to right,  $color-highlight, $color-secondary);
 }
+
+.statisticsButton {
+  margin: 20% 0;
+  padding: 10px;
+  background-color: $color-highlight;
+  border: none;
+  border-radius: 1px;
+  outline: none;
+  font-style: italic;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+}
