@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./TransactionList.scss";
 import blankList from "./../../assets/undraw_blank_canvas_3rbb.svg";
 import DatePicker from "react-datepicker";
+import Pagination from "../Pagination/Pagination";
 
 const TransactionList = ({
   transactions,
   editTransaction,
   deleteTransaction,
 }) => {
+  const [allTransactions, setAllTransactions] = useState(transactions);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [transactionsPerPage] = useState(5);
+
+  useEffect(() => {
+    setAllTransactions(transactions);
+  }, [transactions]);
+
+  const indexOfLastTransaction = currentPage * transactionsPerPage;
+  const indexOfFirstTransaction = indexOfLastTransaction - transactionsPerPage;
+  const currentTransaction = allTransactions.slice(
+    indexOfFirstTransaction,
+    indexOfLastTransaction
+  );
+
+  //Paginate
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  //Update Transactions
   const updateTransaction = (clickedInput, previousValue, uuid) => {
     clickedInput.classList.add("disableInput");
     clickedInput.classList.remove("enableInput");
@@ -64,7 +84,7 @@ const TransactionList = ({
           <li>Date</li>
           <li>Category</li>
         </ul>
-        {transactions.map((transaction) => (
+        {currentTransaction.map((transaction) => (
           <ul className={`transactions-list`} key={transaction.uuid}>
             <li>
               <i className={transaction.transactionTypeIcon} />
@@ -117,6 +137,11 @@ const TransactionList = ({
             </button>
           </ul>
         ))}
+        <Pagination
+          transactionsPerPage={transactionsPerPage}
+          totalTransactions={transactions.length}
+          paginate={paginate}
+        />
       </div>
     );
   } else {

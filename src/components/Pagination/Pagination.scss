@@ -1,0 +1,21 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.pagination-button {
+  text-align: center;
+  padding: 5px;
+  margin: 2px;
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+.current-page {
+  font-weight: bold
+}
