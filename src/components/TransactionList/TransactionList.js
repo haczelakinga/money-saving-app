@@ -35,6 +35,7 @@ const TransactionList = ({
       clickedInput.classList.remove("empty-input");
       const name = clickedInput.name;
       const value = clickedInput.value;
+      console.log(Math.round(value));
 
       const info = {
         name,

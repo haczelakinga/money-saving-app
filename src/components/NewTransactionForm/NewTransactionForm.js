@@ -1,7 +1,6 @@
 import React from "react";
 import "./NewTransactionForm.scss";
 import { v4 as uuidv4 } from "uuid";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 class NewTransactionForm extends React.Component {
@@ -28,15 +27,11 @@ class NewTransactionForm extends React.Component {
       amount: e.target.value,
     });
   };
-  // handleDateChange = (date) => {
-  //   this.setState({
-  //     date: date,
-  //   });
-  // };
 
   handleCategoryChange = (e) => {
     let { value } = e.target;
     let categoryIcon = "";
+
     switch (value) {
       case "Bills":
         categoryIcon = "fas fa-lightbulb";
@@ -56,6 +51,14 @@ class NewTransactionForm extends React.Component {
       case "Hobby":
         categoryIcon = "fas fa-mountain";
         break;
+      case "Salary":
+        categoryIcon = "fas fa-money-bill-wave";
+        break;
+      case "Tips":
+        categoryIcon = "fas fa-coins";
+        break;
+      default:
+        categoryIcon = "";
     }
     this.setState({
       category: value,
@@ -67,7 +70,6 @@ class NewTransactionForm extends React.Component {
     let { value } = e.target;
     let transactionType = value;
     let transactionTypeIcon = "";
-    console.log(value);
     switch (value) {
       case "Outcome":
         transactionTypeIcon = "fas fa-chevron-down arrow-down";
@@ -75,6 +77,8 @@ class NewTransactionForm extends React.Component {
       case "Income":
         transactionTypeIcon = "fas fa-chevron-up arrow-up";
         break;
+      default:
+        transactionTypeIcon = "";
     }
     this.setState({
       transactionType: transactionType,
@@ -86,10 +90,16 @@ class NewTransactionForm extends React.Component {
     const nameInput = document.getElementById("name");
     const costInput = document.getElementById("cost");
     const categoryInput = document.getElementById("category");
-    const allInputs = [nameInput, costInput, categoryInput];
+    const transactionType = document.getElementById("type");
+    const allInputs = [nameInput, costInput, categoryInput, transactionType];
 
     e.preventDefault();
-    if (this.state.name && this.state.amount && this.state.category) {
+    if (
+      this.state.name &&
+      this.state.amount &&
+      this.state.category &&
+      this.state.transactionType
+    ) {
       this.setState({
         uuid: uuidv4(),
       });
@@ -150,13 +160,6 @@ class NewTransactionForm extends React.Component {
         <label htmlFor="date" className="hidden-label">
           Transaction Date
         </label>
-        {/*<DatePicker*/}
-        {/*  id="date"*/}
-        {/*  className="form-input"*/}
-        {/*  selected={this.state.date}*/}
-        {/*  onSelect={(date) => this.handleDateChange(date)}*/}
-        {/*  popperPlacement="bottom"*/}
-        {/*/>*/}
         <label htmlFor="category" className="hidden-label">
           Transaction Category
         </label>
@@ -174,12 +177,14 @@ class NewTransactionForm extends React.Component {
           <option value="School">School</option>
           <option value="Clothes">Clothes</option>
           <option value="Hobby">Hobby</option>
+          <option value="Salary">Salary</option>
+          <option value="Tips">Tips</option>
         </select>
         <label htmlFor="category" className="hidden-label">
           Transaction Category
         </label>
         <select
-          id="category"
+          id="type"
           className="select form-input"
           name="Way"
           onChange={this.handleTransactionType}
