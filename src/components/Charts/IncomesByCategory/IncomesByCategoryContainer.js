@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import SpendsByCategoryChart from "./SpendsByCategoryChart";
+import IncomesByCategory from "./IncomesByCategory";
 import { getAllTransactions } from "../../../reducers/transactionsRedux";
 import { getUserID } from "../../../reducers/userRedux";
 
@@ -13,4 +13,4 @@ const mapStateToProps = () => {
   };
 };
 
-export default connect(mapStateToProps, null)(SpendsByCategoryChart);
+export default connect(mapStateToProps, null)(IncomesByCategory);

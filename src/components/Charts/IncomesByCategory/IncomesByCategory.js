@@ -2,31 +2,27 @@ import React from "react";
 import "../Charts.scss";
 import { Pie } from "react-chartjs-2";
 
-const SpendsByCategoryChart = ({ transactions }) => {
+const IncomesByCategoryChart = ({ transactions }) => {
   const backgroundColor = {
-    Car: "#88878f",
-    Food: "#C8D08B",
-    School: "#105b94",
-    Clothes: "#E3A0C3",
-    Hobby: "#F2CB92",
-    Bills: "#FC534A",
+    Salary: "#E4C9DF",
+    Tips: "#CEE1F3",
   };
   const chartData = {
     labels: [],
     datasets: [
       {
-        label: "Spends",
+        label: "Incomes",
         data: [],
         backgroundColor: [],
         borderWidth: 0,
       },
     ],
   };
-  const spends = transactions.filter(
-    (transaction) => transaction.transactionType === "Outcome"
+  const incomes = transactions.filter(
+    (transaction) => transaction.transactionType === "Income"
   );
 
-  for (let transaction of spends) {
+  for (let transaction of incomes) {
     const transactionCategory = transaction.category;
     if (!chartData.labels.includes(transaction.category)) {
       chartData.labels.push(transaction.category);
@@ -34,7 +30,7 @@ const SpendsByCategoryChart = ({ transactions }) => {
         backgroundColor[transactionCategory]
       );
 
-      const sameCategoryTransaction = spends.filter(
+      const sameCategoryTransaction = incomes.filter(
         (transaction) => transaction.category === transactionCategory
       );
       let price = null;
@@ -52,7 +48,7 @@ const SpendsByCategoryChart = ({ transactions }) => {
         options={{
           title: {
             display: true,
-            text: "Spends by category",
+            text: "Incomes by category",
             fontSize: 25,
           },
           legend: {
@@ -66,4 +62,4 @@ const SpendsByCategoryChart = ({ transactions }) => {
   );
 };
 
-export default SpendsByCategoryChart;
+export default IncomesByCategoryChart;
