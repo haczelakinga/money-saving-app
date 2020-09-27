@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import profilePic from "../../assets/profilePic.svg";
 import "./UserProfile.scss";
 
@@ -22,7 +23,9 @@ const UserProfile = ({ user, incomes, outcomes }) => {
         Outcomes: ${outcomes !== null ? outcomes : 0}
       </span>
       <span className="profile-info">{savingsText()}</span>
-      <button className="statisticsButton">See statistics</button>
+      <Link to="/charts" className="statisticsButton">
+        See statistics
+      </Link>
     </div>
   );
 };
