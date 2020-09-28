@@ -12,7 +12,6 @@ const Pagination = ({ transactionsPerPage, totalTransactions, paginate }) => {
   }
 
   const handle = (number) => (e) => {
-    console.log(pageNumbers);
     const buttons = document.querySelectorAll(".pagination-button");
     for (let button of buttons) {
       button.classList.remove("current-page");
