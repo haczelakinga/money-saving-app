@@ -53,11 +53,12 @@ const SpendsByCategoryChart = ({ transactions }) => {
           title: {
             display: true,
             text: "Spends by category",
+            fontStyle: "italic",
             fontSize: 25,
           },
           legend: {
             display: true,
-            position: "bottom",
+            position: "right",
           },
           responsive: true,
         }}

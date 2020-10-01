@@ -51,6 +51,7 @@ const TransactionsPerDayChart = ({ transactions }) => {
           title: {
             display: true,
             text: "All transactions",
+            fontStyle: "italic",
             fontSize: 25,
           },
           legend: {

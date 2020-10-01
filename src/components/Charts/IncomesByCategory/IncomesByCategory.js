@@ -50,10 +50,11 @@ const IncomesByCategoryChart = ({ transactions }) => {
             display: true,
             text: "Incomes by category",
             fontSize: 25,
+            fontStyle: "italic",
           },
           legend: {
             display: true,
-            position: "bottom",
+            position: "right",
           },
           responsive: true,
         }}
