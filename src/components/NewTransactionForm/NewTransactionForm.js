@@ -35,6 +35,7 @@ class NewTransactionForm extends React.Component {
     switch (value) {
       case "Bills":
         categoryIcon = "fas fa-lightbulb";
+        
         break;
       case "School":
         categoryIcon = "fas fa-graduation-cap";

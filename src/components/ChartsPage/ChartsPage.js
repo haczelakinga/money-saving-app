@@ -1,6 +1,5 @@
 import React from "react";
-import SpendsByCategoryChart from "../Charts/SpendsByCategoryChart/SpendsByCategoryChartContainer";
-import IncomesByCategory from "../Charts/IncomesByCategory/IncomesByCategoryContainer";
+import TransactionsByCategoryChart from "../Charts/TransactionsByCategoryChart/TransactionsByCategoryChartContainer";
 import TransactionsPerDayChart from "../Charts/TransactionsPerDayChart/TransactionsPerDayChartContainer";
 import TransactionsPerMonthChart from "../Charts/TransactionsPerMonth/TransactionsPerMonthChartContainer";
 
@@ -9,8 +8,8 @@ const ChartsPage = () => {
     <div className="charts-container">
       <h1 className="statistics-title">Statistics</h1>
       <div className="flex-container">
-        <SpendsByCategoryChart />
-        <IncomesByCategory />
+        <TransactionsByCategoryChart type='Outcome' title='Spends by category'/>
+        <TransactionsByCategoryChart type='Income' title='Incomes by category'/>
         <TransactionsPerDayChart />
         <TransactionsPerMonthChart />
       </div>
