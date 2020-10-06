@@ -20,7 +20,7 @@ export const getAllIncomes = (transactions, userId) => {
     allIncomes += parseFloat(transaction.amount);
   }
 
-  return allIncomes;
+  return +(Math.round(allIncomes + "e+2") + "e-2");
 };
 
 export const getAllOutcomes = (transactions, userId) => {
@@ -34,7 +34,7 @@ export const getAllOutcomes = (transactions, userId) => {
     allOutcomes += parseFloat(transaction.amount);
   }
 
-  return allOutcomes;
+  return +(Math.round(allOutcomes + "e+2") + "e-2");
 };
 
 // action name creator

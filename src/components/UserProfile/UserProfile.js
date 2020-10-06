@@ -6,10 +6,11 @@ import "./UserProfile.scss";
 const UserProfile = ({ user, incomes, outcomes }) => {
   let savingsText = () => {
     let amount = incomes - outcomes;
+    amount = +(Math.round(amount + "e+2") + "e-2");
     if (amount < 0) {
-      return `You are down by: $${amount}`;
+      return `${amount}`;
     } else {
-      return `You have $${amount} in your piggi bank`;
+      return `${amount}`;
     }
   };
   return (
@@ -20,9 +21,9 @@ const UserProfile = ({ user, incomes, outcomes }) => {
         Incomes: ${incomes !== null ? incomes : 0}
       </span>
       <span className="profile-info">
-        Outcomes: ${outcomes !== null ? outcomes : 0}
+        Spends: ${outcomes !== null ? outcomes : 0}
       </span>
-      <span className="profile-info">{savingsText()}</span>
+      <span className="profile-info">Account Balance: ${savingsText()}</span>
       <Link to="/charts" className="statisticsButton">
         See statistics
       </Link>

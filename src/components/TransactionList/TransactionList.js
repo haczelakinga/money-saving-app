@@ -34,9 +34,12 @@ const TransactionList = ({
     if (clickedInput.value.length > 0) {
       clickedInput.classList.remove("empty-input");
       const name = clickedInput.name;
-      const value = clickedInput.value;
-      console.log(Math.round(value));
-
+      let value = clickedInput.value;
+      if (name === "amount") {
+        let parsedValue = parseFloat(value);
+        value = Math.round((parsedValue + Number.EPSILON) * 100) / 100;
+        clickedInput.value = value;
+      }
       const info = {
         name,
         value,
