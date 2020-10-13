@@ -3,6 +3,7 @@ import logo from "./../../assets/logo.png";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 import LoginButton from "../LoginButton/LoginButtonContainer";
+import Hamburger from "../Hamburger/Hamburger"
 
 class Header extends React.Component {
   state = {
@@ -35,6 +36,7 @@ class Header extends React.Component {
           </Link>
         )}
         <LoginButton />
+        <Hamburger />
       </header>
     );
   }

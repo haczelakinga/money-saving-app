@@ -2,13 +2,21 @@
 
 .transactions-list-wrapper {
   margin: 50px 30px;
+  min-width: 90%;
+  white-space: nowrap;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .list-header {
+  min-width: 90%;
+  float: none;
   background-color: $color-highlight;
   color: #ffffff;
   display: grid;
-  grid-template-columns: 10% 25% 22% 22% 18% auto;
+  grid-template-columns: 5% 30% 15% 30% 15% 5%;
   list-style: none;
   text-align: center;
   padding: 20px 50px;
@@ -17,12 +25,17 @@
 }
 
 .transactions-list {
+  min-width: 90%;
+  float: none;
   display: grid;
-  grid-template-columns: 10% 25% 22% 22% 18% auto;
+  grid-template-columns: 5% 30% 15% 30% 15% 5%;
+
+  // grid-template-columns: 1fr 4fr 2fr 3fr 1fr 1fr;
   list-style: none;
   text-align: center;
   padding: 20px 50px;
   margin: 0;
+
 
   &:nth-child(even) {
     background: $color-secondary;
@@ -39,7 +52,7 @@
   font-size: 15px;
   z-index: 100;
   background-color: transparent;
-  border: none
+  border: none;
 }
 
 .transactions-list:hover > .delete-button {
@@ -129,4 +142,27 @@
 .arrow-up {
   color: green;
   padding: 8px 0;
+}
+
+@media(max-width: 750px) {
+  .transactions-list-wrapper {
+    margin: 50px 10px;
+    overflow-x: scroll;
+  }
+
+  .list-header {
+    min-width:500px;
+    grid-template-columns: 5% 30% 15% 30% 15% 5%;
+    padding: 8px 8px;
+  }
+  .transactions-list {
+    grid-template-columns: 5% 30% 15% 30% 15% 5%;
+    padding: 8px 8px;
+    min-width:500px;
+  }
+
+  .delete-button {
+    display: block;
+    // margin-left: 10px;
+  }
 }

@@ -3,7 +3,7 @@
 .grid-wrapper {
   display: grid;
   grid-template-columns: 20% 80%;
-  height: 78vh;
+  min-height: 78vh;
 }
 
 .grid-one-of-three {
@@ -12,6 +12,12 @@
 
 .grid-two-of-three {
   background-color: $color-primary;
+}
+
+@media(max-width: 850px) {
+  .grid-wrapper {
+    grid-template-columns: 0% 100%;
+  } 
 }
 
 

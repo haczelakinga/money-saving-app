@@ -1,0 +1,11 @@
+.hamburger {
+    display: none;
+    font-size: 30px;
+}
+
+@media(max-width: 850px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+}

@@ -48,4 +48,27 @@
   border: 1px solid #d61e1e;
 }
 
+@media(max-width: 750px) {
+  .form-flexbox {
+    display: flex;
+    flex-direction: column;
+
+  }
+  .form-input {
+    margin: 10px 30px;
+    padding: 8px;
+  }
+
+  .form-button {
+    margin-top: 20px ;
+    padding: 10px 0;
+    width: 90%;
+    align-self: center;
+    background-color: $color-highlight;
+    color: #ffff;
+    &:hover {
+      background-color: darken($color-highlight, 5%);
+      }
+  }
+} 
 

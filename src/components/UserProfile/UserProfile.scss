@@ -1,6 +1,7 @@
 @import '../../styles/settings.scss';
 
 .profile-info-flexbox {
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +32,7 @@
   transform: translate(-50%, -50%);
   width: 110%;
   height: 2px;
-  background-image: linear-gradient(to right,  $color-highlight, $color-secondary);
+  background-image: linear-gradient(to right, $color-highlight, $color-secondary);
 }
 
 .statisticsButton {
@@ -46,4 +47,10 @@
   color: #ffffff;
   cursor: pointer;
   text-decoration: none;
+}
+
+@media(max-width : 850px) {
+  .profile-info-flexbox {
+    display: none;
+  }
 }
