@@ -29,8 +29,6 @@
   float: none;
   display: grid;
   grid-template-columns: 5% 30% 15% 30% 15% 5%;
-
-  // grid-template-columns: 1fr 4fr 2fr 3fr 1fr 1fr;
   list-style: none;
   text-align: center;
   padding: 20px 50px;
@@ -50,7 +48,6 @@
   cursor: pointer;
   color: $color-danger;
   font-size: 15px;
-  z-index: 100;
   background-color: transparent;
   border: none;
 }
@@ -163,6 +160,5 @@
 
   .delete-button {
     display: block;
-    // margin-left: 10px;
   }
 }

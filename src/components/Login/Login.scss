@@ -1,7 +1,6 @@
 .login-wrapper {
   display: flex;
   flex-direction: column;
-  //height: 60vh;
 }
 
 .google-login {
@@ -18,5 +17,6 @@
   text-transform: uppercase;
   margin: 10px;
   color: #ffffff;
+  cursor: pointer;
 }
 

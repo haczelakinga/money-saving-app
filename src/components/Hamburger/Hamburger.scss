@@ -1,11 +1,25 @@
+@import './../../styles/settings.scss';
+
 .hamburger {
-    display: none;
-    font-size: 30px;
+	display: none;
+	font-size: 30px;
 }
 
-@media(max-width: 850px) {
-    .hamburger {
-        display: block;
-        cursor: pointer;
-    }
+@media (max-width: 850px) {
+	.hamburger {
+		margin-right: 30px;
+		display: block;
+		cursor: pointer;
+		color: $color-highlight;
+		z-index: 3;
+
+		&-icon {
+			display: inline-block;
+			padding: 10px;
+		}
+	}
+
+	.white-hamburger {
+		color: #ffff;
+	}
 }

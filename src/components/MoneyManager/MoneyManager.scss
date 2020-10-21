@@ -1,26 +1,32 @@
 @import '../../styles/settings.scss';
 
 .grid-wrapper {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  min-height: 78vh;
+	display: grid;
+	grid-template-columns: 20% 80%;
+	min-height: 80vh;
 }
 
 .grid-one-of-three {
-  background-color: $color-secondary;
+	background-color: $color-secondary;
 }
 
 .grid-two-of-three {
-  background-color: $color-primary;
+	background-color: $color-primary;
 }
 
-@media(max-width: 850px) {
-  .grid-wrapper {
-    grid-template-columns: 0% 100%;
-  } 
+.title {
+	text-align: center;
 }
 
+@media (max-width: 850px) {
+	.grid-wrapper {
+		grid-template-columns: 0% 100%;
+	}
 
-
-
-
+	.title {
+		position: absolute;
+		top: 30%;
+		right: 50%;
+		transform: translateX(50%);
+	}
+}

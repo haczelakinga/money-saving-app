@@ -1,74 +1,78 @@
 @import '../../styles/settings.scss';
 
 .form-flexbox {
-  display: grid;
-  column-gap: 10px;
-  padding: 20px;
-  grid-template-columns: 2fr 1fr 1fr 1fr 150px;
+	display: grid;
+	column-gap: 10px;
+	padding: 20px;
+	grid-template-columns: 2fr 1fr 1fr 1fr 150px;
 }
 
 .form-input {
-  border: 1px solid $color-highlight;
-  outline: none;
-  text-align: center;
+	border: 1px solid $color-highlight;
+	outline: none;
+	text-align: center;
 }
 
-.select{
-  text-align-last:center;
-  direction: rtl;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+.select {
+	text-align-last: center;
+	direction: rtl;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 .hidden-label {
-  position: absolute;
-  visibility: hidden;
+	position: absolute;
+	visibility: hidden;
 }
 
 .form-button {
-  border-radius: 0;
-  border: 2px solid $color-highlight;
-  background-color: $color-primary;
-  padding: 2px 20px;
-  font-size: 18px;
-  outline: none;
-  transition: all 1s;
-  color: $primary-font-color;
-  & :focus {
-    outline: none;
-    outline-offset: 0;
-  }
-  &:hover {
-  background-color: darken($color-primary, 5%);
-  }
+	border-radius: 0;
+	border: 2px solid $color-highlight;
+	background-color: $color-primary;
+	padding: 2px 20px;
+	font-size: 18px;
+	outline: none;
+	transition: all 1s;
+	color: $primary-font-color;
+	& :focus {
+		outline: none;
+		outline-offset: 0;
+	}
+	&:hover {
+		background-color: darken($color-primary, 5%);
+	}
 }
 
 .empty-input {
-  border: 1px solid #d61e1e;
+	border: 1px solid #d61e1e;
 }
 
-@media(max-width: 750px) {
-  .form-flexbox {
-    display: flex;
-    flex-direction: column;
+@media (max-width: 850px) {
+	.form-flexbox {
+		margin-top: 250px;
+	}
+}
+@media (max-width: 750px) {
+	.form-flexbox {
+		display: flex;
+		flex-direction: column;
+	}
 
-  }
-  .form-input {
-    margin: 10px 30px;
-    padding: 8px;
-  }
+	.form-input {
+		margin: 10px 30px;
+		padding: 8px;
+	}
 
-  .form-button {
-    margin-top: 20px ;
-    padding: 10px 0;
-    width: 90%;
-    align-self: center;
-    background-color: $color-highlight;
-    color: #ffff;
-    &:hover {
-      background-color: darken($color-highlight, 5%);
-      }
-  }
-} 
-
+	.form-button {
+		margin-top: 20px;
+		padding: 10px 0;
+		width: 90%;
+		align-self: center;
+		background-color: $color-highlight;
+		color: #ffff;
+		&:hover {
+			background-color: darken($color-highlight, 5%);
+		}
+	}
+}
