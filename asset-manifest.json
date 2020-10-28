@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/money-saving-app/static/css/main.82657cac.chunk.css",
-    "main.js": "/money-saving-app/static/js/main.c7739551.chunk.js",
-    "main.js.map": "/money-saving-app/static/js/main.c7739551.chunk.js.map",
+    "main.js": "/money-saving-app/static/js/main.a91f6649.chunk.js",
+    "main.js.map": "/money-saving-app/static/js/main.a91f6649.chunk.js.map",
     "runtime-main.js": "/money-saving-app/static/js/runtime-main.0712235f.js",
     "runtime-main.js.map": "/money-saving-app/static/js/runtime-main.0712235f.js.map",
     "static/css/2.25ff2e5b.chunk.css": "/money-saving-app/static/css/2.25ff2e5b.chunk.css",
     "static/js/2.72358cf2.chunk.js": "/money-saving-app/static/js/2.72358cf2.chunk.js",
     "static/js/2.72358cf2.chunk.js.map": "/money-saving-app/static/js/2.72358cf2.chunk.js.map",
     "index.html": "/money-saving-app/index.html",
-    "precache-manifest.fa185b458dd526e480fd95f9fdd4012e.js": "/money-saving-app/precache-manifest.fa185b458dd526e480fd95f9fdd4012e.js",
+    "precache-manifest.6edafc258713c243e024077edfc52244.js": "/money-saving-app/precache-manifest.6edafc258713c243e024077edfc52244.js",
     "service-worker.js": "/money-saving-app/service-worker.js",
     "static/css/2.25ff2e5b.chunk.css.map": "/money-saving-app/static/css/2.25ff2e5b.chunk.css.map",
     "static/css/main.82657cac.chunk.css.map": "/money-saving-app/static/css/main.82657cac.chunk.css.map",
@@ -26,6 +26,6 @@
     "static/css/2.25ff2e5b.chunk.css",
     "static/js/2.72358cf2.chunk.js",
     "static/css/main.82657cac.chunk.css",
-    "static/js/main.c7739551.chunk.js"
+    "static/js/main.a91f6649.chunk.js"
   ]
 }

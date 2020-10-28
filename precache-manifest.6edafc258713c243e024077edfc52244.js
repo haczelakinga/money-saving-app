@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ae8e1596501145d8083508a69b2c1b27",
+    "revision": "d9bd0ac1db16f580745c91e990b595b4",
     "url": "/money-saving-app/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/money-saving-app/static/css/2.25ff2e5b.chunk.css"
   },
   {
-    "revision": "1f1cde7eb04670437954",
+    "revision": "e89595d8f04e8b0fd76c",
     "url": "/money-saving-app/static/css/main.82657cac.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/money-saving-app/static/js/2.72358cf2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1f1cde7eb04670437954",
-    "url": "/money-saving-app/static/js/main.c7739551.chunk.js"
+    "revision": "e89595d8f04e8b0fd76c",
+    "url": "/money-saving-app/static/js/main.a91f6649.chunk.js"
   },
   {
     "revision": "f2d712ccff05f2eb08ba",
