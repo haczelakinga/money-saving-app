@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/money-saving-app/static/css/main.82657cac.chunk.css",
-    "main.js": "/money-saving-app/static/js/main.c7739551.chunk.js",
-    "main.js.map": "/money-saving-app/static/js/main.c7739551.chunk.js.map",
+    "main.js": "/money-saving-app/static/js/main.dfaeb72a.chunk.js",
+    "main.js.map": "/money-saving-app/static/js/main.dfaeb72a.chunk.js.map",
     "runtime-main.js": "/money-saving-app/static/js/runtime-main.0712235f.js",
     "runtime-main.js.map": "/money-saving-app/static/js/runtime-main.0712235f.js.map",
     "static/css/2.25ff2e5b.chunk.css": "/money-saving-app/static/css/2.25ff2e5b.chunk.css",
-    "static/js/2.72358cf2.chunk.js": "/money-saving-app/static/js/2.72358cf2.chunk.js",
-    "static/js/2.72358cf2.chunk.js.map": "/money-saving-app/static/js/2.72358cf2.chunk.js.map",
+    "static/js/2.9eb8e902.chunk.js": "/money-saving-app/static/js/2.9eb8e902.chunk.js",
+    "static/js/2.9eb8e902.chunk.js.map": "/money-saving-app/static/js/2.9eb8e902.chunk.js.map",
     "index.html": "/money-saving-app/index.html",
-    "precache-manifest.fa185b458dd526e480fd95f9fdd4012e.js": "/money-saving-app/precache-manifest.fa185b458dd526e480fd95f9fdd4012e.js",
+    "precache-manifest.5b2e001c0fa1daaffa5810afdf9553dd.js": "/money-saving-app/precache-manifest.5b2e001c0fa1daaffa5810afdf9553dd.js",
     "service-worker.js": "/money-saving-app/service-worker.js",
     "static/css/2.25ff2e5b.chunk.css.map": "/money-saving-app/static/css/2.25ff2e5b.chunk.css.map",
     "static/css/main.82657cac.chunk.css.map": "/money-saving-app/static/css/main.82657cac.chunk.css.map",
-    "static/js/2.72358cf2.chunk.js.LICENSE.txt": "/money-saving-app/static/js/2.72358cf2.chunk.js.LICENSE.txt",
+    "static/js/2.9eb8e902.chunk.js.LICENSE.txt": "/money-saving-app/static/js/2.9eb8e902.chunk.js.LICENSE.txt",
     "static/media/profilePic.svg": "/money-saving-app/static/media/profilePic.712c9896.svg",
     "static/media/savingMoney.svg": "/money-saving-app/static/media/savingMoney.2014fc42.svg",
     "static/media/simpleApp.svg": "/money-saving-app/static/media/simpleApp.0c511b23.svg",
@@ -24,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.0712235f.js",
     "static/css/2.25ff2e5b.chunk.css",
-    "static/js/2.72358cf2.chunk.js",
+    "static/js/2.9eb8e902.chunk.js",
     "static/css/main.82657cac.chunk.css",
-    "static/js/main.c7739551.chunk.js"
+    "static/js/main.dfaeb72a.chunk.js"
   ]
 }
