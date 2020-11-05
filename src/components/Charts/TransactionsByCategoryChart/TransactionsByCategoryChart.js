@@ -3,7 +3,6 @@ import '../Charts.scss';
 import { Pie } from 'react-chartjs-2';
 
 const TransactionsByCategoryChart = ({ transactions, type, title }) => {
-	console.log(type);
 	const backgroundColor = {
 		Car: '#88878f',
 		Food: '#C8D08B',

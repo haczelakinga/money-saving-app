@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Hamburger.scss';
 
-const Hamburger = ({ nav }) => {
-	const hamburger = document.querySelector('.hamburger');
+const Hamburger = () => {
+	let nav = '';
+	let hamburger = '';
+	useEffect(() => {
+		nav = document.querySelector('.navigation');
+		hamburger = document.querySelector('.hamburger');
 
-	if (nav && !nav.classList.contains('open')) {
-		hamburger.classList.remove('white-hamburger');
-	}
+		if (nav && !nav.classList.contains('open')) {
+			hamburger.classList.remove('white-hamburger');
+		}
+	}, []);
 
 	const handleClick = () => {
 		nav.classList.toggle('open');
@@ -14,11 +19,13 @@ const Hamburger = ({ nav }) => {
 	};
 
 	return (
-		<div className="hamburger">
-			<span
-				className="fas fa-ellipsis-v hamburger-icon"
-				onClick={handleClick}></span>
-		</div>
+		(
+			<div className="hamburger">
+				<span
+					className="fas fa-ellipsis-v hamburger-icon"
+					onClick={handleClick}></span>
+			</div>
+		)
 	);
 };
 

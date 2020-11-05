@@ -2,7 +2,7 @@
   "name": "money-saving-app",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://haczelakinga.github.io/money-saving-app",
+  "homepage": "https://haczelakinga.github.io/money-saving-app/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -21,7 +21,7 @@
     "react-google-login": "^5.1.21",
     "react-redux": "7.0.1",
     "react-router": "5.0.0",
-    "react-router-dom": "5.0.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "redux": "4.0.1",
     "uuid": "^8.3.0"

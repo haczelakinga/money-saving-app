@@ -2,7 +2,7 @@ import React from "react";
 import GoogleLogin from "react-google-login";
 import "./Login.scss";
 import FacebookLogin from "react-facebook-login";
-import { Redirect } from "react-router";
+import { Redirect } from "react-router-dom";
 
 class Login extends React.Component {
   state = {

@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles/global.scss";
-import { BrowserRouter, Route } from "react-router-dom";
-import { Switch } from "react-router";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
 import MainLayout from "./components/MainLayout/MainLayout";
 import LoginPage from "./components/LoginPage/LoginPage";
@@ -12,7 +11,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRouteContainer";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <MainLayout>
         <Switch>
           <Route exact path="/" component={LandingPage} />
@@ -22,7 +21,7 @@ function App() {
           <Route path="*" component={NotFound} />
         </Switch>
       </MainLayout>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
